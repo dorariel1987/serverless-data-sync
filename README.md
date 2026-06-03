@@ -10,18 +10,18 @@ tested on a laptop with no cloud dependencies.
 ## Architecture
 
 ```
-                 ┌──────────────┐   webhook    ┌───────────────────────┐
-   SaaS source ─▶│ ingest (HTTP)│ ───────────▶ │  queue: sync-events   │
-                 └──────────────┘              └──────────┬────────────┘
+                   ┌──────────────┐   webhook    ┌───────────────────────┐
+   SaaS source ─▶   ingest (HTTP) ───────────▶     queue: sync-events   
+                   └──────────────┘              └──────────┬────────────┘
                                                           │ queue trigger
                                                           ▼
-                                              ┌───────────────────────┐
+                                              ┌────────────────────────┐
                                               │   process (SyncEngine) │
                                               │  source.get → transform│
                                               │  → target.upsert       │
                                               └───┬───────────┬────────┘
                           retriable (backoff)     │           │ fatal / exhausted
-                          re-enqueue ◀─────────────┘           ▼
+                          re-enqueue ◀────────────┘          ▼
                                                    ┌───────────────────────┐
                                                    │ queue: *-poison (DLQ) │
                                                    │ dead_letter trigger   │
