@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+local.settings.json
+bin/
+obj/
+.python_packages/
+*.log

@@ -1,0 +1,20 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+
+    "SYNC_QUEUE_NAME": "sync-events",
+    "SYNC_DLQ_NAME": "sync-events-poison",
+    "SYNC_MAX_ATTEMPTS": "5",
+    "SYNC_BACKOFF_BASE_SECONDS": "2",
+    "SYNC_BACKOFF_MAX_SECONDS": "300",
+
+    "OPENSEARCH_ENABLED": "true",
+    "OPENSEARCH_HOSTS": "https://localhost:9200",
+    "OPENSEARCH_USERNAME": "admin",
+    "OPENSEARCH_PASSWORD": "Admin#12345",
+    "OPENSEARCH_VERIFY_CERTS": "false",
+    "OPENSEARCH_INDEX_PREFIX": "datasync"
+  }
+}

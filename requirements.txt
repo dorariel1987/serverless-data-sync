@@ -1,0 +1,3 @@
+azure-functions==1.21.3
+azure-storage-queue==12.12.0
+opensearch-py==2.7.1
